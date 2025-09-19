@@ -84,3 +84,82 @@ ${mensaje}`;
     window.location.href = href;
   });
 })();
+// 
+// --- Reserva por mailto ---
+(function(){
+  const form = document.getElementById('booking-form');
+  if(!form) return;
+
+  // fecha mínima = hoy
+  const fecha = document.getElementById('fecha');
+  if (fecha) {
+    const hoy = new Date().toISOString().split('T')[0];
+    fecha.min = hoy;
+  }
+
+  const ok = document.getElementById('booking-ok');
+  const emailTo = 'elrincondearturo1@gmail.com';
+
+  const setErr = (input, msg='')=>{
+    const err = input?.parentElement?.querySelector('.error-msg');
+    if (err) err.textContent = msg;
+  };
+
+  form.addEventListener('submit', (e)=>{
+    e.preventDefault();
+
+    const f = (id)=>document.getElementById(id);
+    const v = (id)=>f(id)?.value?.trim() || '';
+
+    const campos = {
+      fecha: f('fecha'),
+      hora: f('hora'),
+      personas: f('personas'),
+      nombre: f('nombre'),
+      telefono: f('telefono'),
+      email: f('email'),
+      acepto: f('acepto'),
+    };
+
+    // limpiar errores
+    Object.values(campos).forEach(el=> el && setErr(el, ''));
+
+    // validación
+    let valid = true;
+    if(!v('fecha'))     { setErr(campos.fecha,'Elige una fecha.'); valid=false; }
+    if(!v('hora'))      { setErr(campos.hora,'Elige una hora.'); valid=false; }
+    if(!v('personas'))  { setErr(campos.personas,'Indica cuántas personas.'); valid=false; }
+    if(!v('nombre'))    { setErr(campos.nombre,'Dinos tu nombre.'); valid=false; }
+    if(!v('telefono'))  { setErr(campos.telefono,'Añade un teléfono.'); valid=false; }
+    if(!v('email') || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('email'))){
+      setErr(campos.email,'Email no válido.'); valid=false;
+    }
+    if(!campos.acepto?.checked){ alert('Debes aceptar la Política de Privacidad.'); valid=false; }
+
+    if(!valid) return;
+
+    const asunto = `Reserva ${v('fecha')} ${v('hora')} - ${v('nombre')} (${v('personas')} pax)`;
+
+    const cuerpo =
+`Hola,
+
+Quisiera reservar:
+- Fecha: ${v('fecha')}
+- Hora: ${v('hora')}
+- Personas: ${v('personas')}
+- Zona: ${v('zona')}
+- Ocasión: ${v('ocasion')}
+
+Datos de contacto:
+- Nombre: ${v('nombre')}
+- Teléfono: ${v('telefono')}
+- Email: ${v('email')}
+
+Comentarios:
+${v('comentarios') || '(sin comentarios)'}
+`;
+
+    if(ok) ok.hidden = false;
+    window.location.href = `mailto:${emailTo}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+  });
+})();
