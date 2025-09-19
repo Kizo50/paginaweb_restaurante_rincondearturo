@@ -299,3 +299,39 @@ footer {
   font-weight: 600;
 }
 
+/* ----- Arreglo general móviles: alto y scroll ----- */
+
+/* Evita desplazamiento lateral si el full-bleed se pasa 1px */
+html, body { overflow-x: hidden; }
+
+/* En móviles, 100vh falla. Usa 100svh/100dvh cuando existan */
+@supports (height: 100svh) {
+  body { min-height: 100svh; }
+}
+@supports (height: 100dvh) {
+  body { min-height: 100dvh; }
+}
+
+/* Contenido principal siempre escroleable */
+body { overflow-y: auto; }
+
+/* Full-bleed: asegúrate de no crear ancho infinito */
+.full-bleed{
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  max-width: 100vw;   /* <- importante */
+  overflow-x: clip;   /* Safari/WebKit moderno */
+}
+
+/* Hero en móvil: altura controlada */
+@media (max-width: 480px){
+  .hero-media{ height: 220px; }
+}
+
+/* Botón de WhatsApp no tape el scroll ni el footer */
+.whatsapp-float{ z-index: 50; bottom: 16px; right: 16px; }
+.whatsapp-float img{ width: 52px; height: 52px; }

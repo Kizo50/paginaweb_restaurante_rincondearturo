@@ -77,3 +77,16 @@
   border-bottom: 2px solid #fff;
   color: #ddd;
 }
+/* Respeta el notch / barra superior en iOS */
+.main-header { padding-top: env(safe-area-inset-top); }
+
+/* Menú en móvil: quepa y no “empuje” la página rara */
+@media (max-width: 768px){
+  .main-nav ul{
+    flex-wrap: wrap;       /* o cambia a tu hamburguesa si ya la pusimos */
+    gap: .4rem .75rem;
+    padding: .5rem .75rem;
+  }
+  .main-nav li{ margin: 0; }
+  .main-nav a{ font-size: .95rem; }
+}
