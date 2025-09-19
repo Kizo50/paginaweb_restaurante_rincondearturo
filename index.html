@@ -1,102 +1,263 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restaurante El Sabor</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/wasap.css"> 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restaurante El Rincón de Arturo</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <!-- Mantengo tu nombre de archivo -->
+  <link rel="stylesheet" href="css/wasap.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="img/logo_restaurante.png" type="image/png" />
 </head>
 <body>
- <!-- HEADER -->
-<header class="main-header">
-  
-  <div class="top-bar">
-  <div class="contact-info">
-    <img src="img/mail_icon.png" alt="Email" class="icon">
-    <a href="mailto:mfercub@gmail.com?subject=Consulta%20Restaurante%20El%20RinconDeArturo&body=Hola%2C%20tengo%20una%20duda..." 
-       style="color: white; text-decoration: none;">
-       mfercub@gmail.com
-    </a>
-  </div>
-
-    <div class="social-icons">
-      <a href="https://www.instagram.com/TU_PAGINA" target="_blank" rel="noopener noreferrer"><img src="img/instagram_icon.png" alt="Instagram"></a>
-      <a href="https://www.facebook.com/TU_PAGINA" target="_blank" rel="noopener noreferrer"><img src="img/icon_facebook.png" alt="Facebook"></a>
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="top-bar">
+      <a href="index.html" class="brand" aria-label="El Rincón de Arturo - Inicio">
+        <img src="img/logo_restaurante.png" alt="El Rincón de Arturo - Logo" />
+      </a>
+      <div class="social-icons">
+         <a href="https://www.tiktok.com/TU_PAGINA" target="_blank" rel="noopener noreferrer">
+          <img src="img/tiktok_icon.png" alt="tiktok" />
+        </a>
+        <a href="https://www.facebook.com/TU_PAGINA" target="_blank" rel="noopener noreferrer">
+          <img src="img/icon_facebook.png" alt="Facebook" />
+        </a>
+        <a href="https://www.instagram.com/TU_PAGINA" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <img src="img/instagram_icon.png" alt="Instagram" />
+        </a>
+        </a>
+        <a
+          href="mailto:elrincondearturo1@gmail.com?subject=Consulta%20Restaurante%20El%20Sabor&body=Hola%2C%20tengo%20una%20duda..."
+          target="_blank" rel="noopener noreferrer" aria-label="Email"
+        >
+          <img src="img/mail_icon.png" alt="Email" />
+        </a>
+      </div>
     </div>
-  </div>
 
-  <!-- Menú principal -->
-  <nav class="main-nav">
-    <ul>
-      <li><a href="index.html" class="active">INICIO</a></li>
-      <li><a href="menu.html">CARTA</a></li>
-      <li><a href="reservas.html">RESERVAS</a></li>
-      <li><a href="ubicacion.html">UBICACIÓN</a></li>
-      <li><a href="contacto.html">CONTACTO</a></li>
-    </ul>
-  </nav>
-</header>
-
+    <!-- Menú principal -->
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html" class="active">INICIO</a></li>
+        <li><a href="menu.html">CARTA</a></li>
+        <li><a href="ubicacion.html">UBICACIÓN</a></li>
+        <li><a href="contacto.html">CONTACTO</a></li>
+        <li><a href="reservas.html">RESERVAS</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- /HEADER -->
 
   <main>
-    <section>
-      <h2>Bienvenidos</h2>
-      <p>Disfruta de nuestros platos caseros elaborados con ingredientes frescos y locales.</p>
+
+    <!-- HERO -->
+    <section class="hero full-bleed section">
+      <div class="container" style="position:relative">
+        <img class="hero-media" src="img/hero_restaurante.jpg" alt="El Rincón de Arturo - Vista del restaurante" />
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <div>
+            <h1>El Rincón de Arturo</h1>
+            <p>Tradición y sabor en cada plato</p>
+            <div class="hero-actions">
+              <a href="reservas.html" class="btn btn-primary">Reserva tu mesa</a>
+              <a href="menu.html" class="btn btn-ghost">Ver la carta</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
+
+    <!-- INTRO / PRESENTACIÓN (banda oscura) -->
+    <section class="intro full-bleed section">
+      <div class="container">
+        <p class="intro-eyebrow">¡SÍGUENOS EN REDES SOCIALES!</p>
+        <p class="intro-handle">@ElRinconDeArturo</p>
+
+        <h2 class="intro-title">El Rincón de Arturo, tu restaurante para comer en Seseña</h2>
+        <p class="intro-lead">
+          Cocina casera, producto fresco y ambiente cercano. Celebra con amigos o familia y
+          disfruta de una experiencia con alma.
+        </p>
+
+        <div class="intro-grid">
+          <article>
+            <h3>Productos De Calidad</h3>
+            <p>Ingredientes frescos y proveedores locales. Platos que hablan por sí solos.</p>
+          </article>
+          <article>
+            <h3>Experiencia Única</h3>
+            <p>Ambiente acogedor y servicio atento para disfrutar cada momento.</p>
+          </article>
+          <article>
+            <h3>Equipo Profesional</h3>
+            <p>Cocineros y camareros con oficio y cariño por la cocina casera.</p>
+          </article>
+          <article>
+            <h3>Gran Variedad De Platos</h3>
+            <p>Clásicos y sugerencias del día: ensaladas, arroces, carnes, pescados y postres.</p>
+          </article>
+        </div>
+
+        <div style="margin-top:1rem;">
+          <a href="reservas.html" class="btn btn-primary">Reserva tu mesa</a>
+          <a href="menu.html" class="btn btn-ghost">Ver la carta</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLATOS DESTACADOS -->
+    <section class="platos section">
+      <div class="container">
+        <h2>Nuestros favoritos</h2>
+        <div class="grid">
+          <article class="card">
+            <img src="img/plato_paella.jpg" alt="Paella mixta" />
+            <div class="body">
+              <h3>Paella mixta</h3>
+              <p class="price">12 €</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="img/pollo_brasa.jpg" alt="Pollo a la brasa" />
+            <div class="body">
+              <h3>Pollo a la brasa</h3>
+              <p class="price">15 €</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="img/postre_casero.jpg" alt="Tarta de queso casera" />
+            <div class="body">
+              <h3>Tarta de queso casera</h3>
+              <p class="price">5 €</p>
+            </div>
+          </article>
+        </div>
+        <div style="text-align:center; margin-top:1rem;">
+          <a href="menu.html" class="btn btn-primary">Ver carta completa</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HORARIOS -->
+    <section class="info section">
+      <div class="container">
+        <h2>Horario</h2>
+        <p>Lunes a Viernes: 12:30 – 16:00 y 20:00 – 23:30</p>
+        <p>Sábados y Domingos: 12:30 – 23:30</p>
+        <p>Martes cerrado</p>
+      </div>
+    </section>
+
+    <!-- UBICACIÓN (mapa) -->
+    <section class="section">
+      <div class="container">
+        <h2>¿Dónde estamos?</h2>
+        <p>C. Barataria, 57, 45224 Seseña Nuevo, Toledo</p>
+        <div class="map-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3051.550796588954!2d-3.6502634000000005!3d40.1077272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd421b428ff46ee5%3A0xc83ce96f67b18305!2sEl%20Rinc%C3%B3n%20de%20Arturo!5e0!3m2!1ses!2ses!4v1758285790130!5m2!1ses!2ses"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <p style="text-align:center; margin-top:.6rem;">
+          <a href="ubicacion.html" class="btn btn-ghost">Ver cómo llegar</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- RESEÑAS (carrusel con estrellas) -->
+    <section class="reseñas section">
+      <div class="container">
+        <h2>Opiniones de nuestros clientes</h2>
+        <div class="review-container">
+          <div class="review active">
+            <p>“Comida casera espectacular. La paella, de 10.”</p>
+            <div class="stars">★★★★</div>
+            <small>— Marta G.</small>
+          </div>
+          <div class="review">
+            <p>“Trato cercano y ambiente familiar. Volveremos.”</p>
+            <div class="stars">★★★★★</div>
+            <small>— Luis R.</small>
+          </div>
+          <div class="review">
+            <p>“Postres caseros riquísimos. Recomendable.”</p>
+            <div class="stars">★★★★</div>
+            <small>— Ana P.</small>
+          </div>
+          <div class="review">
+            <p>“Muy buen servicio y platos abundantes.”</p>
+            <div class="stars">★★★★★</div>
+            <small>— Javier S.</small>
+          </div>
+          <div class="review">
+            <p>“Un ambiente acogedor y comida deliciosa.”</p>
+            <div class="stars">★★★★★</div>
+            <small>— Carmen L.</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
- <footer class="footer">
-  <div class="footer-container">
-    <h2 class="footer-title">RESTAURANTE EL SABOR</h2>
-    <!--
-    <nav class="footer-nav">
-      <a href="menu.html">Carta</a>
-      <a href="reservas.html">Reservas</a>
-      <a href="ubicacion.html">Ubicación</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
-    -->
-    
-    <div class="footer-social">
-       <!-- LINK REDES -->
-      <a href="https://www.facebook.com/TU_PAGINA" target="_blank" rel="noopener noreferrer">
-        <img src="img/icon_facebook.png" alt="Facebook">
-      </a>
-      
-      <a href="https://www.instagram.com/TU_PERFIL" target="_blank" rel="noopener noreferrer">
-        <img src="img/instagram_icon.png" alt="Instagram">
-      </a>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <h2 class="footer-title">RESTAURANTE EL RINCÓN DE ARTURO</h2>
 
-      <a href="mailto:mfercub@gmail.com?subject=Consulta%20Restaurante%20El%20Sabor&body=Hola%2C%20tengo%20una%20duda..." target="_blank" rel="noopener noreferrer">
-        <img src="img/mail_icon.png" alt="Gmail">
-    </a> 
+      <div class="footer-social">
+        <a href="https://www.tiktok.com/TU_PAGINA" target="_blank" rel="noopener noreferrer">
+          <img src="img/tiktok_icon.png" alt="tiktok" />
+        </a>
+        <a href="https://www.facebook.com/TU_PAGINA" target="_blank" rel="noopener noreferrer">
+          <img src="img/icon_facebook.png" alt="Facebook" />
+        </a>
+        <a href="https://www.instagram.com/TU_PERFIL" target="_blank" rel="noopener noreferrer">
+          <img src="img/instagram_icon.png" alt="Instagram" />
+        </a>
+        <a
+          href="mailto:elrincondearturo1@gmail.com?subject=Consulta%20Restaurante%20El%20Sabor&body=Hola%2C%20tengo%20una%20duda..."
+          target="_blank" rel="noopener noreferrer">
+          <img src="img/mail_icon.png" alt="Gmail" />
+        </a>
+      </div>
+
+      <div class="footer-legal">
+        <h3>ENLACES LEGALES</h3>
+        <a href="#">Aviso Legal</a>
+        <a href="#">Política de Privacidad</a>
+        <a href="#">Política de Cookies</a>
+        <a href="#">Declaración de Accesibilidad</a>
+      </div>
     </div>
 
-    <div class="footer-legal">
-      <h3>ENLACES LEGALES</h3>
-      <a href="#">Aviso Legal</a>
-      <a href="#">Política de Privacidad</a>
-      <a href="#">Política de Cookies</a>
-      <a href="#">Declaración de Accesibilidad</a>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Restaurante El Rincón de Arturo - Todos los derechos reservados</p>
+      <p>Producido por <a href="#">ElRinconDeArturoSL</a></p>
     </div>
-  </div>
+  </footer>
+  <!-- /FOOTER -->
 
-  <div class="footer-bottom">
-    <p>&copy; 2025 Restaurante El Rincón de Arturo - Todos los derechos reservados</p>
-    <p>Producido por <a href="#">ElRinconDeArturoSL</a></p>
-  </div>
-</footer>
+  <!-- Botón flotante WhatsApp -->
+  <a
+    href="https://wa.me/34619694746?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer">
+    <img src="img/icon_wasap.png" alt="WhatsApp" />
+  </a>
 
-<!-- Botón flotante WhatsApp -->
-<a href="https://wa.me/34600111222?text=Hola%20quiero%20más%20información" 
-   class="whatsapp-float" 
-   target="_blank" 
-   rel="noopener noreferrer">
-  <img src="img/icon_wasap.png" alt="WhatsApp">
-</a>
-
-
+  <!-- JS -->
+  <script src="js/principal.js"></script>
 </body>
 </html>

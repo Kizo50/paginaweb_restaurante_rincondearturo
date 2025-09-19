@@ -1,41 +1,200 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menú - Restaurante El Sabor</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carta - Restaurante El Rincón de Arturo</title>
+
+  <!-- Estilos compartidos -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/wasap.css" />
+  <link rel="icon" href="img/logo_restaurante.png" type="image/png" />
 </head>
 <body>
-  <header>
-    <h1>Menú</h1>
-    <nav>
+  <!-- HEADER COMPARTIDO -->
+  <header class="main-header">
+    <div class="top-bar">
+      <a href="index.html" class="brand" aria-label="El Rincón de Arturo - Inicio">
+        <img src="img/logo_restaurante.png" alt="El Rincón de Arturo - Logo" />
+      </a>
+
+      <div class="social-icons">
+        <a href="https://www.tiktok.com/TU_PAGINA" target="_blank" rel="noopener noreferrer">
+          <img src="img/tiktok_icon.png" alt="tiktok" />
+        </a>
+        <a href="https://www.facebook.com/TU_PAGINA" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <img src="img/icon_facebook.png" alt="Facebook" />
+        </a>
+        <a href="https://www.instagram.com/TU_PAGINA" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <img src="img/instagram_icon.png" alt="Instagram" />
+        </a>
+        <a
+          href="mailto:elrincondearturo1@gmail.com?subject=Consulta%20Restaurante%20El%20Rinc%C3%B3n%20de%20Arturo&body=Hola%2C%20tengo%20una%20duda..."
+          target="_blank" rel="noopener noreferrer" aria-label="Email">
+          <img src="img/mail_icon.png" alt="Email" />
+        </a>
+      </div>
+    </div>
+
+    <!-- Menú principal -->
+    <nav class="main-nav">
       <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="ubicacion.html">Ubicación</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="menu.html" class="active">CARTA</a></li>
+        <li><a href="ubicacion.html">UBICACIÓN</a></li>
+        <li><a href="contacto.html">CONTACTO</a></li>
+        <li><a href="reservas.html">RESERVAS</a></li>
       </ul>
     </nav>
   </header>
+  <!-- /HEADER -->
 
   <main>
-    <section>
-      <h2>Menú del día</h2>
-      <img src="img/menu.jpg" alt="Menú del restaurante" style="max-width:100%; height:auto;">
-      <p><strong>Plato del día:</strong> Paella mixta - $12</p>
-      <p><strong>Especial de la casa:</strong> Pollo a la brasa - $15</p>
-      
-      <h3>Alérgenos</h3>
-      <ul>
-        <li>Gluten (pan, pasta)</li>
-        <li>Lácteos (salsas, postres)</li>
-        <li>Frutos secos (algunas ensaladas)</li>
-      </ul>
+
+    <!-- Intro carta -->
+    <section class="section">
+      <div class="container" style="text-align:center;">
+        <h1>Carta</h1>
+        <p>Platos caseros con producto fresco. Aquí tienes una selección; puedes ver la carta completa o el menú del día.</p>
+        <div style="margin-top:.75rem;">
+          <a href="#menu-del-dia" class="btn btn-primary">Menú del día</a>
+          <a href="#platos" class="btn btn-ghost">Ver platos</a>
+        </div>
+      </div>
     </section>
+
+    <!-- Menú del día -->
+    <section id="menu-del-dia" class="section platos">
+      <div class="container">
+        <h2>Menú del día</h2>
+        <div class="grid">
+          <article class="card">
+            <img src="img/menu.jpg" alt="Menú del restaurante" />
+            <div class="body">
+              <h3>Plato del día</h3>
+              <p>Paella mixta</p>
+              <p class="price">12 €</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="img/pollo_brasa.jpg" alt="Especial de la casa - Pollo a la brasa" />
+            <div class="body">
+              <h3>Especial de la casa</h3>
+              <p>Pollo a la brasa</p>
+              <p class="price">15 €</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platos destacados / carta breve -->
+    <section id="platos" class="section platos">
+      <div class="container">
+        <h2>Algunos de nuestros platos</h2>
+        <div class="grid">
+          <article class="card">
+            <img src="img/plato_paella.jpg" alt="Paella mixta" />
+            <div class="body">
+              <h3>Paella mixta</h3>
+              <p class="price">12 €</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="img/pollo_brasa.jpg" alt="Pollo a la brasa" />
+            <div class="body">
+              <h3>Pollo a la brasa</h3>
+              <p class="price">15 €</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="img/postre_casero.jpg" alt="Tarta de queso casera" />
+            <div class="body">
+              <h3>Tarta de queso casera</h3>
+              <p class="price">5 €</p>
+            </div>
+          </article>
+        </div>
+
+        <div style="text-align:center; margin-top:1rem;">
+          <a href="menu.pdf" class="btn btn-primary">Descargar carta (PDF)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alérgenos -->
+    <section class="section info">
+      <div class="container">
+        <h3>Alérgenos</h3>
+        <ul>
+          <li>Gluten (pan, pasta)</li>
+          <li>Lácteos (salsas, postres)</li>
+          <li>Frutos secos (algunas ensaladas)</li>
+        </ul>
+        <p style="margin-top:.5rem;">Si tienes alguna alergia, consúltanos y te ayudamos a elegir tu plato.</p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="container" style="text-align:center;">
+        <a href="reservas.html" class="btn btn-primary">Reservar mesa</a>
+        <a href="contacto.html" class="btn btn-ghost">Contactar</a>
+      </div>
+    </section>
+
   </main>
 
-  <footer>
-    <p>&copy; 2025 Restaurante El Sabor</p>
+  <!-- FOOTER COMPARTIDO -->
+  <footer class="footer">
+    <div class="footer-container">
+      <h2 class="footer-title">RESTAURANTE EL RINCÓN DE ARTURO</h2>
+
+      <div class="footer-social">
+        <a href="https://www.tiktok.com/TU_PAGINA" target="_blank" rel="noopener noreferrer">
+          <img src="img/tiktok_icon.png" alt="tiktok" />
+        </a>
+        <a href="https://www.facebook.com/TU_PAGINA" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <img src="img/icon_facebook.png" alt="Facebook" />
+        </a>
+        <a href="https://www.instagram.com/TU_PERFIL" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <img src="img/instagram_icon.png" alt="Instagram" />
+        </a>
+        <a
+          href="mailto:elrincondearturo1@gmail.com?subject=Consulta%20Restaurante%20El%20Rinc%C3%B3n%20de%20Arturo&body=Hola%2C%20tengo%20una%20duda..."
+          target="_blank" rel="noopener noreferrer" aria-label="Email">
+          <img src="img/mail_icon.png" alt="Email" />
+        </a>
+      </div>
+
+      <div class="footer-legal">
+        <h3>ENLACES LEGALES</h3>
+        <a href="#">Aviso Legal</a>
+        <a href="#">Política de Privacidad</a>
+        <a href="#">Política de Cookies</a>
+        <a href="#">Declaración de Accesibilidad</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Restaurante El Rincón de Arturo - Todos los derechos reservados</p>
+      <p>Producido por <a href="#">ElRinconDeArturoSL</a></p>
+    </div>
   </footer>
+  <!-- /FOOTER -->
+
+  <!-- Botón flotante WhatsApp -->
+  <a
+    href="https://wa.me/34619694746?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp">
+    <img src="img/icon_wasap.png" alt="WhatsApp" />
+  </a>
+
+  <!-- JS (si usas carruseles/scroll suave) -->
+  <script src="js/principal.js"></script>
 </body>
 </html>

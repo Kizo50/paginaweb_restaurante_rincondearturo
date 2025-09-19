@@ -1,34 +1,192 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto - Restaurante El Sabor</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto - Restaurante El Rincón de Arturo</title>
+
+  <!-- Estilos compartidos -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/wasap.css" />
+  <link rel="icon" href="img/logo_restaurante.png" type="image/png" />
 </head>
 <body>
-  <header>
-    <h1>Contacto</h1>
-    <nav>
+  <!-- HEADER COMPARTIDO -->
+ <header class="main-header">
+    <div class="top-bar">
+      <a href="index.html" class="brand" aria-label="El Rincón de Arturo - Inicio">
+        <img src="img/logo_restaurante.png" alt="El Rincón de Arturo - Logo" />
+      </a>
+
+      <div class="social-icons">
+        <a href="https://www.tiktok.com/TU_PAGINA" target="_blank" rel="noopener noreferrer">
+          <img src="img/tiktok_icon.png" alt="tiktok" />
+        </a>
+        <a href="https://www.facebook.com/TU_PAGINA" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <img src="img/icon_facebook.png" alt="Facebook" />
+        </a>
+        <a href="https://www.instagram.com/TU_PAGINA" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <img src="img/instagram_icon.png" alt="Instagram" />
+        </a>
+        <a
+          href="mailto:elrincondearturo1@gmail.com?subject=Consulta%20Restaurante%20El%20Rinc%C3%B3n%20de%20Arturo&body=Hola%2C%20tengo%20una%20duda..."
+          target="_blank" rel="noopener noreferrer" aria-label="Email">
+          <img src="img/mail_icon.png" alt="Email" />
+        </a>
+      </div>
+    </div>
+
+    <!-- Menú principal -->
+    <nav class="main-nav">
       <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="menu.html">Menú</a></li>
-        <li><a href="ubicacion.html">Ubicación</a></li>
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="menu.html">CARTA</a></li>
+        <li><a href="ubicacion.html">UBICACIÓN</a></li>
+        <li><a href="contacto.html" class="active">CONTACTO</a></li>
+        <li><a href="reservas.html">RESERVAS</a></li>
       </ul>
     </nav>
   </header>
+  <!-- /HEADER -->
 
   <main>
-    <section>
-      <h2>Reserva o contáctanos</h2>
-      <p>Teléfono: 555-123-456</p>
-      <p>Email: contacto@elsabor.com</p>
-      <p><a href="https://wa.me/1234567890">WhatsApp</a></p>
-    </section>
-  </main>
+  
 
-  <footer>
-    <p>&copy; 2025 Restaurante El Sabor</p>
+<!-- Cabecera de sección --> 
+ <section class="section"> 
+  <div class="container"> 
+    <h1>Contacto</h1> 
+    <p>¿Tienes dudas, quieres reservar para un grupo o necesitas información adicional? Escríbenos o llámanos.
+
+    </p> 
+  </div> 
+</section> 
+<!-- Datos de contacto -->
+  <section class="section info">
+     <div class="container"> 
+      <h2>Cómo hablar con nosotros</h2>
+       <p><strong>Teléfono:</strong>
+         <a href="tel:+34619694746">+34 619 69 47 46</a>
+        </p> 
+        <p><strong>Email:</strong> <a href="mailto:elrincondearturo1@gmail.com?subject=Consulta%20Restaurante%20El%20Rinc%C3%B3n%20de%20Arturo&body=Hola%2C%20tengo%20una%20duda...">elrincondearturo1@gmail.com</a></p> 
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/34619694746?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener">Escríbenos por WhatsApp</a></p>
+         <div style="margin-top:.8rem;"> 
+          <a href="reservas.html" class="btn btn-primary">Reservar mesa</a> <a href="ubicacion.html" class="btn btn-ghost">Cómo llegar</a> </div> </div> </section> 
+        </div> 
+      </section>
+
+  <!-- Cabecera -->
+  <section class="section">
+    <div class="container" style="text-align:center;">
+      <h1>Contáctanos</h1>
+      <p>
+        Puedes contactar con nosotros en el número de teléfono
+        <a href="tel:+34619694746" class="link-strong">619694746</a>
+        o desde el siguiente formulario:
+      </p>
+      
+    </div>
+  </section>
+
+  <!-- Formulario -->
+  <section class="section">
+    <div class="container">
+      <form id="contact-form" class="contact-form" novalidate>
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" type="text" placeholder="Tu nombre..." required>
+          <span class="error-msg" aria-live="polite"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="apellidos">Apellidos</label>
+          <input id="apellidos" name="apellidos" type="text" placeholder="Tus apellidos...">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Tu email*</label>
+          <input id="email" name="email" type="email" placeholder="Tu dirección de email" required>
+          <span class="error-msg" aria-live="polite"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje*</label>
+          <textarea id="mensaje" name="mensaje" rows="6" placeholder="Escríbenos tu mensaje" required></textarea>
+          <span class="error-msg" aria-live="polite"></span>
+        </div>
+
+        <div class="form-actions" style="text-align:center;">
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+
+        <p id="form-ok" class="form-ok" hidden>¡Gracias! Estamos abriendo tu gestor de correo…</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- (Opcional) Horario, si lo quieres mantener -->
+  <section class="section info">
+    <div class="container">
+      <h2>Horario</h2>
+      <p>Lunes a Viernes: 12:30 – 16:00 y 20:00 – 23:30</p>
+      <p>Sábados y Domingos: 12:30 – 23:30</p>
+      <p>Martes cerrado</p>
+    </div>
+  </section>
+
+</main>
+
+
+  <!-- FOOTER COMPARTIDO -->
+  <footer class="footer">
+    <div class="footer-container">
+      <h2 class="footer-title">RESTAURANTE EL RINCÓN DE ARTURO</h2>
+
+      <div class="footer-social">
+        <a href="https://www.tiktok.com/TU_PAGINA" target="_blank" rel="noopener noreferrer">
+          <img src="img/tiktok_icon.png" alt="tiktok" />
+        </a>
+        <a href="https://www.facebook.com/TU_PAGINA" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <img src="img/icon_facebook.png" alt="Facebook" />
+        </a>
+        <a href="https://www.instagram.com/TU_PERFIL" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <img src="img/instagram_icon.png" alt="Instagram" />
+        </a>
+        <a
+          href="mailto:elrincondearturo1@gmail.com?subject=Consulta%20Restaurante%20El%20Rinc%C3%B3n%20de%20Arturo&body=Hola%2C%20tengo%20una%20duda..."
+          target="_blank" rel="noopener noreferrer" aria-label="Email">
+          <img src="img/mail_icon.png" alt="Email" />
+        </a>
+      </div>
+
+      <div class="footer-legal">
+        <h3>ENLACES LEGALES</h3>
+        <a href="#">Aviso Legal</a>
+        <a href="#">Política de Privacidad</a>
+        <a href="#">Política de Cookies</a>
+        <a href="#">Declaración de Accesibilidad</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Restaurante El Rincón de Arturo - Todos los derechos reservados</p>
+      <p>Producido por <a href="#">ElRinconDeArturoSL</a></p>
+    </div>
   </footer>
+  <!-- /FOOTER -->
+
+  <!-- Botón flotante WhatsApp -->
+  <a
+    href="https://wa.me/34619694746?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp">
+    <img src="img/icon_wasap.png" alt="WhatsApp" />
+  </a>
+
+  <!-- JS unificado -->
+  <script src="js/principal.js"></script>
 </body>
 </html>
