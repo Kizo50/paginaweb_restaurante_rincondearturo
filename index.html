@@ -3,16 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-
   <title>Restaurante El Rincón de Arturo</title>
 
   <!-- Estilos -->
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/header.css" />
-  <!-- Mantengo tu nombre de archivo -->
   <link rel="stylesheet" href="css/wasap.css" />
-
-  <!-- Favicon -->
   <link rel="icon" href="img/logo_restaurante.png" type="image/png" />
 </head>
 <body>
@@ -23,7 +19,7 @@
         <img src="img/logo_restaurante.png" alt="El Rincón de Arturo - Logo" />
       </a>
       <div class="social-icons">
-         <a href="https://www.tiktok.com/TU_PAGINA" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.tiktok.com/TU_PAGINA" target="_blank" rel="noopener noreferrer">
           <img src="img/tiktok_icon.png" alt="tiktok" />
         </a>
         <a href="https://www.facebook.com/TU_PAGINA" target="_blank" rel="noopener noreferrer">
@@ -32,11 +28,9 @@
         <a href="https://www.instagram.com/TU_PAGINA" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
           <img src="img/instagram_icon.png" alt="Instagram" />
         </a>
-        </a>
         <a
           href="mailto:elrincondearturo1@gmail.com?subject=Consulta%20Restaurante%20El%20Sabor&body=Hola%2C%20tengo%20una%20duda..."
-          target="_blank" rel="noopener noreferrer" aria-label="Email"
-        >
+          target="_blank" rel="noopener noreferrer" aria-label="Email">
           <img src="img/mail_icon.png" alt="Email" />
         </a>
       </div>
@@ -53,11 +47,13 @@
       </ul>
     </nav>
   </header>
+
+  
   <!-- /HEADER -->
 
   <main>
 
-    <!-- HERO -->
+    <!-- HERO (parallax sutil se activa solo con el CSS/JS ya añadido) -->
     <section class="hero full-bleed section">
       <div class="container" style="position:relative">
         <img class="hero-media" src="img/hero_restaurante.jpg" alt="El Rincón de Arturo - Vista del restaurante" />
@@ -76,31 +72,33 @@
     </section>
 
     <!-- INTRO / PRESENTACIÓN (banda oscura) -->
-    <section class="intro full-bleed section">
+    <section class="intro full-bleed section reveal">
       <div class="container">
         <p class="intro-eyebrow">¡SÍGUENOS EN REDES SOCIALES!</p>
         <p class="intro-handle">@ElRinconDeArturo</p>
 
         <h2 class="intro-title">El Rincón de Arturo, tu restaurante para comer en Seseña</h2>
+        <div class="divider"></div>
+
         <p class="intro-lead">
           Cocina casera, producto fresco y ambiente cercano. Celebra con amigos o familia y
           disfruta de una experiencia con alma.
         </p>
 
         <div class="intro-grid">
-          <article>
+          <article class="reveal" data-delay="1">
             <h3>Productos De Calidad</h3>
             <p>Ingredientes frescos y proveedores locales. Platos que hablan por sí solos.</p>
           </article>
-          <article>
+          <article class="reveal" data-delay="2">
             <h3>Experiencia Única</h3>
             <p>Ambiente acogedor y servicio atento para disfrutar cada momento.</p>
           </article>
-          <article>
+          <article class="reveal" data-delay="3">
             <h3>Equipo Profesional</h3>
             <p>Cocineros y camareros con oficio y cariño por la cocina casera.</p>
           </article>
-          <article>
+          <article class="reveal" data-delay="4">
             <h3>Gran Variedad De Platos</h3>
             <p>Clásicos y sugerencias del día: ensaladas, arroces, carnes, pescados y postres.</p>
           </article>
@@ -113,55 +111,65 @@
       </div>
     </section>
 
-    <!-- PLATOS DESTACADOS -->
-    <section class="platos section">
+    <!-- Tarjetas PDF de la carta/menús (sección alterna + reveal) -->
+    <section class="section section--alt reveal">
       <div class="container">
-        <h2>Nuestros favoritos</h2>
-        <div class="grid">
-          <article class="card">
-            <img src="img/paella_foto.png" alt="Paella mixta" />
-            <div class="body">
-              <h3>Paella mixta</h3>
-              <p class="price">12 €</p>
-            </div>
-          </article>
-          <article class="card">
-            <img src="img/pollo_brasa.png" alt="Pollo a la brasa" />
-            <div class="body">
-              <h3>Pollo a la brasa</h3>
-              <p class="price">15 €</p>
-            </div>
-          </article>
-          <article class="card">
-            <img src="img/tartade_queso.png" alt="Tarta de queso casera" />
-            <div class="body">
-              <h3>Tarta de queso casera</h3>
-              <p class="price">5 €</p>
-            </div>
-          </article>
-        </div>
-        <div style="text-align:center; margin-top:1rem;">
-          <a href="menu.html" class="btn btn-primary">Ver carta completa</a>
+        <h2 class="section-title">Descarga nuestras cartas y menús</h2>
+        <div class="divider"></div>
+
+        <div class="menu-cards">
+          <!-- Menú semanal -->
+          <a class="menu-card reveal" data-delay="1" href="docs/menupdf.pdf" target="_blank" rel="noopener"
+             aria-label="Abrir PDF del Menú Semanal">
+            <img src="img/menu_semanal.jpg" alt="Portada Menú semanal">
+            <span class="menu-card__label">MENÚ SEMANAL</span>
+          </a>
+
+          <!-- Menú fin de semana -->
+          <a class="menu-card reveal" data-delay="2" href="docs/menu_fin_de_semana.pdf" target="_blank" rel="noopener"
+             aria-label="Abrir PDF del Menú de fin de semana">
+            <img src="img/menu_fin.jpg" alt="Portada Menú de fin de semana">
+            <span class="menu-card__label">MENÚ FIN DE SEMANA</span>
+          </a>
+
+          <!-- Carta de picoteo -->
+          <a class="menu-card reveal" data-delay="3" href="docs/carta_picoteo.pdf" target="_blank" rel="noopener"
+             aria-label="Abrir PDF de la Carta de picoteo">
+            <img src="img/carta_picoteo.jpg" alt="Portada Carta de picoteo">
+            <span class="menu-card__label">CARTA DE PICOTEO</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- HORARIOS -->
-    <section class="info section">
-      <div class="container">
-        <h2>Horario</h2>
-        <p>Lunes a Viernes: 12:30 – 16:00 y 20:00 – 23:30</p>
-        <p>Sábados y Domingos: 12:30 – 23:30</p>
-        <p>Martes cerrado</p>
-      </div>
-    </section>
+    
+
+    <!-- HORARIO (invierno) -->
+<section class="info section section--alt reveal">
+  <div class="container">
+    <h2 class="section-title">Horario de invierno</h2>
+    <div class="divider"></div>
+
+    <div class="card-soft">
+      <p><strong>Lunes:</strong> Descanso de personal</p>
+      <p><strong>Martes – Jueves:</strong> 08:00 – 18:00</p>
+      <p><strong>Viernes:</strong> 08:00 – 00:00</p>
+      <p><strong>Sábado:</strong> 09:00 – 00:00</p>
+      <p><strong>Domingo:</strong> 09:00 – 18:00</p>
+      <p style="margin-top:.5rem; font-size:.95rem; color:#555;">Gracias, perdón por las molestias.</p>
+    </div>
+  </div>
+</section>
+
 
     <!-- UBICACIÓN (mapa) -->
-    <section class="section">
+    <section class="section reveal">
       <div class="container">
-        <h2>¿Dónde estamos?</h2>
-        <p>C. Barataria, 57, 45224 Seseña Nuevo, Toledo</p>
-        <div class="map-wrap">
+        <h2 class="section-title">¿Dónde estamos?</h2>
+        <div class="divider"></div>
+        <p style="text-align:center;">C. Barataria, 57, 45224 Seseña Nuevo, Toledo</p>
+
+        <div class="map-wrap" style="margin-top:1rem;">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3051.550796588954!2d-3.6502634000000005!3d40.1077272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd421b428ff46ee5%3A0xc83ce96f67b18305!2sEl%20Rinc%C3%B3n%20de%20Arturo!5e0!3m2!1ses!2ses!4v1758285790130!5m2!1ses!2ses"
             allowfullscreen
@@ -175,14 +183,16 @@
       </div>
     </section>
 
-    <!-- RESEÑAS (carrusel con estrellas) -->
-    <section class="reseñas section">
+    <!-- RESEÑAS (sección alterna + reveal) -->
+    <section class="reseñas section section--alt reveal">
       <div class="container">
-        <h2>Opiniones de nuestros clientes</h2>
+        <h2 class="section-title">Opiniones de nuestros clientes</h2>
+        <div class="divider"></div>
+
         <div class="review-container">
           <div class="review active">
             <p>“Comida casera espectacular. La paella, de 10.”</p>
-            <div class="stars">★★★★</div>
+            <div class="stars">★★★★★</div>
             <small>— Marta G.</small>
           </div>
           <div class="review">
@@ -192,7 +202,7 @@
           </div>
           <div class="review">
             <p>“Postres caseros riquísimos. Recomendable.”</p>
-            <div class="stars">★★★★</div>
+            <div class="stars">★★★★★</div>
             <small>— Ana P.</small>
           </div>
           <div class="review">
@@ -258,7 +268,22 @@
     <img src="img/icon_wasap.png" alt="WhatsApp" />
   </a>
 
+  
+
   <!-- JS -->
   <script src="js/principal.js"></script>
+
+  <!-- Popup Cookies -->
+  <div id="cookie-popup" class="cookie-popup">
+    <div class="cookie-popup__content">
+      <p>Usamos cookies para mejorar tu experiencia en El Rincón de Arturo. 
+      Al continuar aceptas nuestra <a href="cookies.html" target="_blank">Política de Cookies</a>.</p>
+      <div class="cookie-popup__actions">
+        <button id="accept-cookies" class="btn btn-primary">Aceptar</button>
+        <button id="reject-cookies" class="btn btn-ghost">Rechazar</button>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

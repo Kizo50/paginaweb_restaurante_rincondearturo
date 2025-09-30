@@ -11,6 +11,85 @@ document.querySelectorAll("nav a").forEach(link => {
   });
 });
 
+// ===== Reveal on scroll =====
+(function(){
+  const items = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window) || !items.length) return;
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  items.forEach(el=> io.observe(el));
+})();
+
+// ===== Header sticky con blur al hacer scroll =====
+(function(){
+  const header = document.querySelector('.main-header');
+  if(!header) return;
+  const onScroll = ()=> {
+    if(window.scrollY > 8) header.classList.add('is-scrolled');
+    else header.classList.remove('is-scrolled');
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll);
+})();
+
+// ===== Parallax sutil del hero =====
+(function(){
+  const hero = document.querySelector('.hero');
+  const media = hero?.querySelector('.hero-media');
+  if(!hero || !media) return;
+  document.documentElement.classList.add('parallax-on');
+  window.addEventListener('scroll', ()=>{
+    const rect = hero.getBoundingClientRect();
+    const view = Math.max(1, window.innerHeight);
+    if(rect.bottom > 0 && rect.top < view){
+      const p = (rect.top / view); // -1..1 aprox
+      media.style.transform = `translateY(${p * 10}px)`;
+    }
+  }, { passive:true });
+})();
+
+// ===== Botón "volver arriba" =====
+(function(){
+  const btn = document.querySelector('.to-top');
+  if(!btn) return;
+  const toggle = ()=> {
+    if(window.scrollY > 600) btn.classList.add('is-show');
+    else btn.classList.remove('is-show');
+  };
+  toggle();
+  window.addEventListener('scroll', toggle, { passive:true });
+  btn.addEventListener('click', ()=> window.scrollTo({ top:0, behavior:'smooth' }));
+})();
+
+
+// ===== Popup de cookies =====
+document.addEventListener("DOMContentLoaded", () => {
+  const popup = document.getElementById("cookie-popup");
+  const acceptBtn = document.getElementById("accept-cookies");
+  const rejectBtn = document.getElementById("reject-cookies");
+
+  if (!localStorage.getItem("cookieConsent")) {
+    popup.style.display = "block"; // mostrar si no hay elección guardada
+  }
+
+  acceptBtn.addEventListener("click", () => {
+    localStorage.setItem("cookieConsent", "accepted");
+    popup.style.display = "none";
+  });
+
+  rejectBtn.addEventListener("click", () => {
+    localStorage.setItem("cookieConsent", "rejected");
+    popup.style.display = "none";
+  });
+});
+
+
 // --- Carrusel de reseñas ---
 const reviews = document.querySelectorAll(".review");
 let currentReview = 0;

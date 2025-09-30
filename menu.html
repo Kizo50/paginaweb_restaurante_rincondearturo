@@ -56,85 +56,60 @@
     <section class="section">
       <div class="container" style="text-align:center;">
         <h1>Carta</h1>
-        <p>Platos caseros con producto fresco. Aquí tienes una selección; puedes ver la carta completa o el menú del día.</p>
-        <div style="margin-top:.75rem;">
-          <a href="#menu-del-dia" class="btn btn-primary">Menú del día</a>
-          <a href="#platos" class="btn btn-ghost">Ver platos</a>
-        </div>
+        <p>Platos caseros con producto fresco. Descarga nuestras cartas y menús en PDF:</p>
       </div>
     </section>
 
-    <!-- Menú del día -->
-    <section id="menu-del-dia" class="section platos">
+    <!-- Tarjetas de menús / cartas -->
+    <section class="section">
       <div class="container">
-        <h2>Menú del día</h2>
-        <div class="grid">
-          <article class="card">
-            <img src="img/paella_foto.png" alt="Menú del restaurante" />
-            <div class="body">
-              <h3>Plato del día</h3>
-              <p>Paella mixta</p>
-              <p class="price">12 €</p>
-            </div>
-          </article>
-          <article class="card">
-            <img src="img/pollo_brasa.png" alt="Especial de la casa - Pollo a la brasa" />
-            <div class="body">
-              <h3>Especial de la casa</h3>
-              <p>Pollo a la brasa</p>
-              <p class="price">15 €</p>
-            </div>
-          </article>
+        <div class="menu-cards">
+          <!-- Menú semanal -->
+          <a class="menu-card" href="docs/menupdf.pdf" target="_blank" rel="noopener"
+             aria-label="Abrir PDF del Menú Semanal">
+            <img src="img/menu_semanal.jpg" alt="Portada Menú semanal">
+            <span class="menu-card__label">MENÚ SEMANAL</span>
+          </a>
+
+          <!-- Menú fin de semana -->
+          <a class="menu-card" href="docs/menu_fin_de_semana.pdf" target="_blank" rel="noopener"
+             aria-label="Abrir PDF del Menú de fin de semana">
+            <img src="img/menu_fin.jpg" alt="Portada Menú de fin de semana">
+            <span class="menu-card__label">MENÚ FIN DE SEMANA</span>
+          </a>
+
+          <!-- Carta de picoteo -->
+          <a class="menu-card" href="docs/carta_picoteo.pdf" target="_blank" rel="noopener"
+             aria-label="Abrir PDF de la Carta de picoteo">
+            <img src="img/carta_picoteo.jpg" alt="Portada Carta de picoteo">
+            <span class="menu-card__label">CARTA DE PICOTEO</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Platos destacados / carta breve -->
-    <section id="platos" class="section platos">
-      <div class="container">
-        <h2>Algunos de nuestros platos</h2>
-        <div class="grid">
-          <article class="card">
-            <img src="img/paella_foto.png" alt="Paella mixta" />
-            <div class="body">
-              <h3>Paella mixta</h3>
-              <p class="price">12 €</p>
-            </div>
-          </article>
-          <article class="card">
-            <img src="img/pollo_brasa.png" alt="Pollo a la brasa" />
-            <div class="body">
-              <h3>Pollo a la brasa</h3>
-              <p class="price">15 €</p>
-            </div>
-          </article>
-          <article class="card">
-            <img src="img/tartade_queso.png" alt="Tarta de queso casera" />
-            <div class="body">
-              <h3>Tarta de queso casera</h3>
-              <p class="price">5 €</p>
-            </div>
-          </article>
-        </div>
+   <!-- Alérgenos -->
+<section class="section info">
+  <div class="container">
+    <h3>Alérgenos</h3>
+    <ul>
+      <li>Gluten: presente en pan, pasta, rebozados, bollería, croissants, bizcochos, hamburguesas, churros.</li>
+      <li>Huevos: tortillas, repostería, bollería, croissants, mayonesa, salsas y rebozados.</li>
+      <li>Lácteos: salsas cremosas, postres, quesos, mantequilla, café con leche, repostería.</li>
+      <li>Frutos secos: presentes en bizcochos especiales, bollería, algunas guarniciones y salsas.</li>
+      <li>Soja: posible en bollería industrial, panes especiales o salsas.</li>
+      <li>Sésamo: panes o tostadas con semillas.</li>
+      <li>Pescado: tapas, frituras, bocadillos de pescado.</li>
+      <li>Moluscos y crustáceos: calamares, chipirones, gambas, mariscos.</li>
+      <li>Mostaza: salsas, aderezos, hamburguesas o bocadillos.</li>
+      <li>Sulfitos: vinos, adobos, embutidos, conservas y algunas salsas.</li>
+    </ul>
+    <p style="margin-top:.5rem;">
+      ⚠️ Si tienes alguna alergia o intolerancia, consúltanos antes de realizar tu pedido y te ayudaremos a elegir tu plato.
+    </p>
+  </div>
+</section>
 
-        <div style="text-align:center; margin-top:1rem;">
-          <a href="menupdf.pdf" class="btn btn-primary">Descargar carta (PDF)</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Alérgenos -->
-    <section class="section info">
-      <div class="container">
-        <h3>Alérgenos</h3>
-        <ul>
-          <li>Gluten (pan, pasta)</li>
-          <li>Lácteos (salsas, postres)</li>
-          <li>Frutos secos (algunas ensaladas)</li>
-        </ul>
-        <p style="margin-top:.5rem;">Si tienes alguna alergia, consúltanos y te ayudamos a elegir tu plato.</p>
-      </div>
-    </section>
 
     <!-- CTA -->
     <section class="section">
@@ -194,7 +169,7 @@
     <img src="img/icon_wasap.png" alt="WhatsApp" />
   </a>
 
-  <!-- JS (si usas carruseles/scroll suave) -->
+  <!-- JS -->
   <script src="js/principal.js"></script>
 </body>
 </html>
