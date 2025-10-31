@@ -87,32 +87,7 @@ main { flex: 1; }
 .main-nav a:hover,
 .main-nav a.active{ text-decoration: underline; }
 
-/* =========================================================
-   HERO (foto grande + CTA)
-========================================================= */
-.hero{ position: relative; }
-.hero-media{
-  width:100%;
-  height: clamp(280px, 42vw, 420px);
-  object-fit: cover;
-  display:block;
-  border-radius: 8px;
-}
-.hero-overlay{
-  position:absolute; inset:0;
-  background:rgba(0,0,0,.35);
-  border-radius: 8px;
-}
-.hero-content{
-  position:absolute; inset:0;
-  display:flex; align-items:center; justify-content:center;
-  text-align:center; color:#fff; padding:0 1rem;
-}
-.hero-content h1{
-  font-size: clamp(1.8rem, 3.8vw, 2.6rem);
-  margin-bottom:.5rem;
-}
-.hero-actions .btn{ margin:.25rem; }
+
 
 /* =========================================================
    Botones
@@ -421,15 +396,60 @@ footer {
   transition: transform .12s linear;
 }
 
-/* ========= Botón volver arriba ========= */
-.to-top {
-  position: fixed; right: 16px; bottom: 88px; /* encima del WhatsApp */
-  width: 44px; height: 44px; border-radius: 50%;
-  border: none; cursor: pointer;
-  background: #2e3b2e; color:#fff; font-weight:700;
-  box-shadow: 0 8px 20px rgba(0,0,0,.18);
-  display: none; align-items: center; justify-content: center;
+
+/* --- HERO con carrusel --- */
+.hero { position: relative; }
+.hero .container { position: relative; }
+
+/* El carrusel debe tener altura propia */
+.hero-slider{
+  position: relative;
+  height: clamp(280px, 42vw, 420px);   /* misma lógica que tenías en .hero-media */
+  border-radius: 8px;
+  overflow: hidden;
 }
-.to-top.is-show { display: flex; }
-.to-top:hover { filter: brightness(1.05); }
+
+/* Cada slide ocupa todo el carrusel */
+.hero-slide{
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity .6s ease;
+}
+.hero-slide.is-active{ opacity: 1; }
+
+/* La imagen llena el slide */
+.hero-slide .hero-media{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Capas: overlay por encima de la foto, texto por encima de todo */
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 2;
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+}
+.hero-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  z-index: 3;
+  padding: 0 1rem;
+}
+
+/* Controles del carrusel por encima */
+.hero-prev, .hero-next, .hero-dots{ z-index: 3; }
+
+
+
 

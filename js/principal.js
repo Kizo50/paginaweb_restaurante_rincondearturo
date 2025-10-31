@@ -242,3 +242,66 @@ ${v('comentarios') || '(sin comentarios)'}
     window.location.href = `mailto:${emailTo}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
   });
 })();
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.querySelector('.hero-slider');
+  if (!slider) return;
+
+  const slides = Array.from(slider.querySelectorAll('.hero-slide'));
+  const prevBtn = slider.querySelector('.hero-prev');
+  const nextBtn = slider.querySelector('.hero-next');
+  const dotsWrap = slider.querySelector('.hero-dots');
+
+  // Crear puntos
+  slides.forEach((_, i) => {
+    const b = document.createElement('button');
+    b.setAttribute('aria-label', `Ir a la diapositiva ${i + 1}`);
+    if (i === 0) b.classList.add('is-active');
+    b.addEventListener('click', () => goTo(i, true));
+    dotsWrap.appendChild(b);
+  });
+  const dots = Array.from(dotsWrap.children);
+
+  let index = 0;
+  let timer = null;
+  const DURATION = 5000;
+
+  function setActive(i){
+    slides.forEach((s, k) => s.classList.toggle('is-active', k === i));
+    dots.forEach((d, k) => d.classList.toggle('is-active', k === i));
+  }
+  function goTo(i, user=false){
+    index = (i + slides.length) % slides.length;
+    setActive(index);
+    if (user) restart();
+  }
+  function next(){ goTo(index + 1); }
+  function prev(){ goTo(index - 1); }
+
+  function start(){ timer = setInterval(next, DURATION); }
+  function stop(){ clearInterval(timer); timer = null; }
+  function restart(){ stop(); start(); }
+
+  prevBtn.addEventListener('click', () => prev());
+  nextBtn.addEventListener('click', () => next());
+
+  // Pausa al pasar el ratón / foco (accesible)
+  slider.addEventListener('mouseenter', stop);
+  slider.addEventListener('mouseleave', start);
+  slider.addEventListener('focusin', stop);
+  slider.addEventListener('focusout', start);
+
+  // Swipe en móvil
+  let touchX = null;
+  slider.addEventListener('touchstart', (e) => { touchX = e.touches[0].clientX; stop(); }, {passive:true});
+  slider.addEventListener('touchend', (e) => {
+    if (touchX == null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 40) (dx < 0 ? next() : prev());
+    touchX = null; start();
+  });
+
+  start();
+});
+
