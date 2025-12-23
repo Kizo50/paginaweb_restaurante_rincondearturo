@@ -447,6 +447,99 @@ footer {
   padding: 0 1rem;
 }
 
+.legal-subtitle{
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: .5rem 0 1.2rem;
+  letter-spacing: .03em;
+}
+
+.legal-page p{
+  margin: .8rem 0;
+  line-height: 1.7;
+}
+
+/* Sublistas a, b, c… */
+.legal-sublist{
+  margin-top: .5rem;
+  padding-left: 1.2rem;
+  list-style-type: lower-alpha;
+}
+
+.legal-sublist li{
+  margin: .4rem 0;
+}
+
+/* ====== Legales: secciones + tabla + listas ====== */
+.legal-note{
+  margin: .4rem 0 1.2rem;
+  font-size: .95rem;
+  color: #555;
+}
+
+.legal-h2{
+  font-size: 1.05rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  margin: 1.4rem 0 .55rem;
+}
+
+.legal-bullets{
+  margin: .4rem 0 1rem;
+  padding-left: 1.1rem;
+  text-align: left;
+}
+.legal-bullets li{ margin: .45rem 0; line-height: 1.7; }
+
+.legal-links{
+  margin: .6rem 0 1rem;
+  padding-left: 1.1rem;
+}
+.legal-links li{ margin: .35rem 0; }
+
+/* Tabla responsive */
+.legal-table-wrap{
+  margin: .8rem 0 1.2rem;
+  overflow-x: auto;
+  border: 1px solid rgba(0,0,0,.10);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.legal-table{
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px;
+}
+
+.legal-table th,
+.legal-table td{
+  text-align: left;
+  padding: .75rem .8rem;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.legal-table thead th{
+  font-weight: 800;
+  background: #f6f8f7;
+}
+/* Sub-viñetas para páginas legales */
+.legal-subbullets{
+  margin-top: .45rem;
+  padding-left: 1.1rem;
+  list-style: disc;
+}
+
+.legal-subbullets li{
+  margin: .35rem 0;
+  line-height: 1.7;
+}
+
+
 /* Controles del carrusel por encima */
 .hero-prev, .hero-next, .hero-dots{ z-index: 3; }
 
